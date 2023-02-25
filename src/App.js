@@ -4,7 +4,7 @@ import {Box} from '@mui/material';
 import {Navbar,Feed,VideoDetail,ChannelDetail,SearchFeed}from './components';
  const App = () => (
    <BrowserRouter>
-   <Box sx={{backgroundColor: 'purple'}}>
+   <Box sx={{backgroundColor: '#808080'}}>
       <Navbar/>
     <Routes>
                   <Route path="/" excat element={<Feed/>}/>
