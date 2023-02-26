@@ -1,7 +1,7 @@
 import React from 'react'
 import { useState,useEffect } from 'react';
 import {Box,Stack,Typography} from '@mui/material'
-import Sidebar from './Sidebar';
+import {Sidebar,Videos} from '../components';
 const Feed = () => {
   return (
     <Stack sx={{flexDirection:{sx:"column",md:"row"}}}>
@@ -14,7 +14,14 @@ const Feed = () => {
         copyright 2023 Nancy Media
       </Typography>
     </Box>
-
+    <Box p={2} sx={{overflowY:'auto',
+  height:'90vh',flex:2}}>
+    <Typography variant='h4' fontWeight="bold"
+    mb={2} sx={{color: 'white'}}>
+      New<span style={{color:"red"}}> videos</span>
+    </Typography>
+    <Videos videos={[]}/>
+    </Box>
     </Stack>
   )
 }
