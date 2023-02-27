@@ -1,10 +1,8 @@
 import React from 'react'
 
-const SearchFeed = () => {
+function SearchFeed() {
   return (
-    <div>
-      search
-    </div>
+    <div>SearchFeed</div>
   )
 }
 

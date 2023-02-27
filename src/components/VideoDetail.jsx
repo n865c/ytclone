@@ -1,10 +1,8 @@
 import React from 'react'
 
-const VideoDetail = () => {
+function VideoDetail() {
   return (
-    <div>
-      Video
-    </div>
+    <div>VideoDetail</div>
   )
 }
 
