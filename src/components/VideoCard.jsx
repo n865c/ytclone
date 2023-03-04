@@ -1,7 +1,7 @@
 import React from 'react';
 import {Link} from "react-router-dom";
 import { Typography ,Card,CardContent,CardMedia} from '@mui/material';
-import { CheckCircle } from '@mui/icons-material';
+import { CheckCircle, VideoCallSharp } from '@mui/icons-material';
 import { demoThumbnailUrl,demoVideoUrl,demoVideoTitle,demoChannelUrl,demoChannelTitle } from '../utils/constants';
 const VideoCard = ({video:{id:{videoId},
 snippet}}) => {
@@ -33,6 +33,7 @@ demoVideoUrl}>
     }
     <CheckCircle sx={{fontSize:12,color:'black',ml:'5px'}}/>
   </Typography>
+  <Link to={snippet?.publishedAt?`/video/${snippet?.publishedAt}`:demoChannelUrl}></Link>
 </Link>
 </CardContent>
     </Card>

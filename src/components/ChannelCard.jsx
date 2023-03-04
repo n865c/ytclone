@@ -3,29 +3,40 @@ import {Box,CardContent,CardMedia,Typography} from '@mui/material';
 import { CheckCircle } from '@mui/icons-material';
 import { Link } from 'react-router-dom';
 import { demoChannelUrl, demoProfilePicture,demoChannelTitle, demoVideoUrl } from '../utils/constants';
-const ChannelCard = ({channelDetail:{
-  snippet}}) => {
+const ChannelCard = ({channelDetail}) => {
     return (
-      <Box sx={{width:{md:'320px',xs:'100%'},
-      boxShadow:'none',borderRadius:12}}>
-          <Link to={snippet?.channelId?`/channel/${snippet?.channelId}`:
-          demoVideoUrl}>
-          <CardMedia 
-          image={snippet?.thumbnails?.medium?.url}
-          alt={snippet?.channelTitle}
-          sx={{width:319,height:180}}/>
+      <Box sx={{
+      boxShadow:'none',
+      borderRadius:'20px',
+      display:'flex',
+      justifyContent:'center',
+      alignItems:'center',
+      width:{xs:'356px', md: '320px'},
+      height:'326px',
+      margin:'auto'
+      }}
+      >
+          <Link to={`/channel/${channelDetail?.id?.channelId}`}>
+  <CardContent sx={{display:'flex', flexDirection:'column'
+  ,justifyContent:'center', textAlign:'center',color:'#fff'}}>
+<CardMedia
+   image={channelDetail?.snippet?.thumbnails?.high?.url||demoProfilePicture}
+   alt={channelDetail?.snippet?.title}
+   sx={{borderRadius:'50%',height:'180px',
+   width:'180px',mb:2,border:'1px solid #e3e3e3'}}
+/>
+<Typography variant="h6">
+  {channelDetail?.snippet?.title}
+  <CheckCircle sx={{fontSize:14,color:'gray',
+  ml:'5px'}}/>
+</Typography>
+{channelDetail?.statistics?.subscriberCount && (
+<Typography>
+  {parseInt(channelDetail?.statistics?.subscriberCount).toLocaleString()}
+</Typography>
+    )}
+</CardContent>
   </Link>
-  <CardContent sx={{backgroundColor:"white",
-  height:'106x'}}>
-    <Link to={snippet?.channelId?`/channel/${snippet?.ChannelCardchannelId}`:
-  demoChannelUrl}>
-    <Typography variant="subtitle"
-    fontWeight="bold" color="black">
-      {snippet?.title.slice(0,60)||
-      demoChannelTitle.slice(0,60)}
-    </Typography>
-    </Link>
-  </CardContent>
       </Box>
     )
   }
