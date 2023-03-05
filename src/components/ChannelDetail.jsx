@@ -12,8 +12,6 @@ const  ChannelDetail=()=> {
   useEffect(()=>{
     fetchFromAPI(`channels?part=snippet&id=${id}`).then((data)=>setChannelDetail(data?.items[0]));
     fetchFromAPI(`search?channelId=${id}&part=snippet&order=date`).then((data)=>setVideos(data.items));},[id]);
-    console.log(channelDetail);
-    console.log(videos);
   return (
     <Box minHeight="95vh">
       <Box>
