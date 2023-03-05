@@ -19,7 +19,7 @@ snippet}}) => {
 height:'106x'}}>
   <Link to={videoId?`/video/${videoId}`:
 demoVideoUrl}>
-  <Typography variant='="subtitle'
+  <Typography variant="subtitle1"
   fontWeight="bold" color="black">
     {snippet?.title.slice(0,60)||
     demoVideoTitle.slice(0,60)}
